@@ -343,3 +343,6 @@ document.addEventListener("click", function (e) {
         globalSearch.value = "";
     }
 });
+
+
+
