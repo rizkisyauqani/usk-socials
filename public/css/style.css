@@ -1,0 +1,8 @@
+.overlay.show {
+    height: 100%;
+    width: 100%;
+}
+
+.socmed-overlay.show {
+    transform: scaleX(1);
+}
