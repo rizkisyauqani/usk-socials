@@ -328,7 +328,7 @@
         </aside>
     </div>
 
-    <script src="../js/homepage.js"></script>
+    <script src="../js/script.js"></script>
     <script>
         feather.replace()
     </script>

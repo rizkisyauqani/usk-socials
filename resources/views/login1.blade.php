@@ -30,7 +30,7 @@
                     class="py-2 px-6 text-white font-medium bg-[#1BBE00] rounded-full block mx-auto cursor-pointer">
             </li>
         </ul>
-        <p class="text-center font-medium">Belum punya akun? <a href="#" class="text-[#1BBE00]">daftar</a></p>
+        <p class="text-center font-medium">belum punya akun? <a href="#" class="text-[#1BBE00]">daftar</a></p>
     </section>
 </body>
 
