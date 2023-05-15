@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
-
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +39,18 @@ Route::get('/homepage', function () {
     return view('homepage');
 })->middleware(['auth'])->name('homepage');
 
+Route::get('/change-password', function () {
+    return view('change-password', ['title' => 'change password', 'user' => Auth::user()]);
+});
+
+Route::get('/preferences', function () {
+    return view('preferences', ['user' => Auth::user(), 'title' => 'preferences']);
+});
+
+Route::get('/dashboard-profile', function () {
+    return view('dashboard-profile', ['user' => Auth::user(), 'title' => 'dashboard profile']);
+});
+
 Route::get('/profile', [UserController::class, 'index'])->name('profile');
 
 Route::patch('/profile', [UserController::class, 'edit'])->name('profile-edit');
@@ -46,6 +58,7 @@ Route::patch('/profile', [UserController::class, 'edit'])->name('profile-edit');
 Route::get('/profile-delete', [UserController::class, 'del'])->name('profile-page-delete');
 
 Route::delete('/profile-delete-account', [UserController::class, 'delete'])->name('profile-delete');
+
 
 
 

@@ -47,7 +47,7 @@
                     <ul class="dropdown-menu ml-28 mb-6 ">
                         <li class="flex gap-4 mb-2">
                             <img src="../images/person-setting-logo.png" alt="" class="w-6 h-6">
-                            <a href="/profile" class="font-bold">Account</a>
+                            <a href="/dashboard-profile" class="font-bold">Account</a>
                         </li>
                     </ul>
                 </li>
