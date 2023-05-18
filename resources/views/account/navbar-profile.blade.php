@@ -1,7 +1,7 @@
 <!-- Main navigation container -->
 <nav class="flex-no-wrap absolute top-0 left-60 flex w-[1296px] items-center justify-between bg-neutral-100 py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4"
     data-te-navbar-ref>
-    <div class="flex w-full flex-wrap items-center justify-between px-3">
+    <div class="flex w-[95%] flex-wrap items-center justify-between px-3">
         <!-- Hamburger button for mobile view -->
         <button
             class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
@@ -60,7 +60,7 @@
                     href="#" id="dropdownMenuButton2" role="button" data-te-dropdown-toggle-ref
                     aria-expanded="false">
                     <!-- User avatar -->
-                    <img src="{{ $user->image }}" class="rounded-full" style="height: 25px; width: 25px" alt=""
+                    <img src="@if ($user->image != null) {{ $user->image }} @else ../images/user.png @endif " class="rounded-full" style="height: 25px; width: 25px" alt=""
                         loading="lazy" />
                     <!-- Notification counter -->
                     <span
@@ -71,8 +71,11 @@
                     aria-labelledby="dropdownMenuButton2" data-te-dropdown-menu-ref>
                     <!-- Second dropdown menu items -->
                     <li>
-                        <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                            href="#" data-te-dropdown-item-ref>Logout</a>
+                        <form class="w-full" method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit" class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
+                                data-te-dropdown-item-ref>Logout</button>
+                        </form>
                     </li>
                 </ul>
             </div>

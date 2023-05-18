@@ -8,14 +8,14 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class ProfileController extends Controller
+class homePageController extends Controller
 {
-    public function profilePage($email)
+    public function index()
     {
-        $user = User::where('email', $email)->first();
-        $tweets = Tweet::where('user_id', $user->id)->with('user')->get();
-        return view('profile.detail', [
-            "user" => $user,
+        $tweets = Tweet::latest()->with('user', 'likes')->get();
+        $users = User::where('id', "!=", Auth::user()->id)->get();
+        return view('homepage', [
+            "users" => $users,
             "tweets" => $tweets,
             "auth" => Auth::user()
         ]);
