@@ -9,16 +9,17 @@
     <main class="px-4 md:px-8 lg:px-24 xl:px-32 w-full">
         <div class="flex mt-8">
             <div class="1/3">
-                <img class="w-64 h-64 rounded-full" src="@if ($user->image != null) {{ $user->image }} @else {{ asset('assets/blank_photo.png') }} @endif" alt="">
+                <img class="w-64 h-64 rounded-full" src="@if ($user->image != null) {{ $user->image }} @else {{ asset('assets/blank-photo.png') }} @endif" alt="">
             </div>
             <div class="w-2/3 pl-8">
                 <h4 class="text-4xl mt-8 font-semibold">{{ $user->name }}</h4>
-                <h4 class="text-3xl mt-4 text-gray-700">{{ $user->email }}</h4>
+                <h4 class="text-3xl mt-4 text-gray-700">{{ "@".$user->email }}</h4>
                 @if (Illuminate\Support\Facades\Auth::user()->id == $user->id)
                     <div class="flex mt-8">
-                        <a class="px-6 py-2 bg-gray-400 hover:bg-gray-500 hover:text-white rounded-lg" href="">Account Setting</a>
+                        <a href="/dashboard-profile" class="px-6 py-2 bg-gray-400 hover:bg-gray-500 hover:text-white rounded-lg" href="">Account Setting</a>
                     </div>
                 @endif
+
             </div>
         </div>
         <div class="w-full h-1 bg-gray-400 mt-6"></div>

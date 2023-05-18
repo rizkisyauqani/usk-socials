@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\homePageController;
+use App\Http\Controllers\message\messageController;
+use App\Http\Controllers\message\roomController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TweetController;
 use Illuminate\Support\Facades\Route;
@@ -82,6 +84,12 @@ Route::get('/profile-delete', [UserController::class, 'del'])->name('profile-pag
 
 Route::delete('/profile-delete-account', [UserController::class, 'delete'])->name('profile-delete');
 
+Route::prefix('messages')->middleware('auth')->name('chat.')->group(function (){
+    Route::get('/', [messageController::class, 'index'])->name('index');
+    Route::post('/', [messageController::class, 'saveChat'])->name('save');
+    Route::get('/load/{roomId}', [messageController::class, 'loadChat'])->name('load');
+});
+Route::post('/room', [roomController::class, 'create'])->name('room.create')->middleware('auth');
 
 
 

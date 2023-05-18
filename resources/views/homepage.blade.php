@@ -32,7 +32,7 @@
             </span>
         </button>
 
-        
+
         <!-- Sidenav -->
         <nav id="sidenav-5"
             class="fixed left-0 top-0 z-[1035] h-screen w-24 lg:w-[384px] -translate-x-full overflow-hidden bg-white shadow-[0_4px_12px_0_rgba(0,0,0,0.07),_0_2px_4px_rgba(0,0,0,0.05)] sm:data-[te-sidenav-hidden='true']:translate-x-0 lg:data-[te-sidenav-hidden='false']:translate-x-0"
@@ -43,16 +43,16 @@
             <ul class="relative m-0 list-none px-[0.2rem]" data-te-sidenav-menu-ref>
                 <li class="relative">
                     <a href="{{ route('homepage') }}"
-                        class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
+                        class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-600 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                         data-te-sidenav-link-ref>
                         <span class="text-[#1BBE00] text-lg">USK <span class="text-[#FFD600]">SOCIALS</span></span>
                     </a>
                 </li>
                 <li class="relative">
                     <a href="/messages"
-                        class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
+                        class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-600 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                         data-te-sidenav-link-ref>
-                        <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
+                        <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-600 dark:[&>svg]:text-gray-600">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-envelope" viewBox="0 0 16 16">
                                 <path
@@ -63,10 +63,24 @@
                     </a>
                 </li>
                 <li class="relative">
-                    <a href="/dashboard-profile"
-                        class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
+                    <a href="/{{ "@".$auth->email }}"
+                        class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-600 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                         data-te-sidenav-link-ref>
-                        <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
+                        <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-600 dark:[&>svg]:text-gray-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-person-gear" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z" />
+                            </svg>
+                        </span>
+                        <span>My Profile</span>
+                    </a>
+                </li>
+                <li class="relative">
+                    <a href="/dashboard-profile"
+                        class="flex h-12 cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-600 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
+                        data-te-sidenav-link-ref>
+                        <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-600 dark:[&>svg]:text-gray-600">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-person-gear" viewBox="0 0 16 16">
                                 <path
@@ -80,9 +94,9 @@
                     <form class="w-full" method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit"
-                            class="flex h-12 w-full cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-300 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
+                            class="flex h-12 w-full cursor-pointer items-center truncate rounded-[5px] px-6 py-4 text-[0.875rem] text-gray-600 outline-none transition duration-300 ease-linear hover:bg-slate-50 hover:text-inherit hover:outline-none focus:bg-slate-50 focus:text-inherit focus:outline-none active:bg-slate-50 active:text-inherit active:outline-none data-[te-sidenav-state-active]:text-inherit data-[te-sidenav-state-focus]:outline-none motion-reduce:transition-none dark:text-gray-600 dark:hover:bg-white/10 dark:focus:bg-white/10 dark:active:bg-white/10"
                             data-te-sidenav-link-ref>
-                            <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-400 dark:[&>svg]:text-gray-300">
+                            <span class="mr-4 [&>svg]:h-4 [&>svg]:w-4 [&>svg]:text-gray-600 dark:[&>svg]:text-gray-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-box-arrow-left" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -125,7 +139,7 @@
                                 <img src="../images/image-logo.png" alt="post image" class="w-4 h-4 cursor-pointer"
                                     data-te-toggle="modal" data-te-target="#createTweet " data-te-ripple-init
                                     data-te-ripple-color="light">
-    
+
                             </div>
                             <div class="tweet-btn">
                                 <button
@@ -151,7 +165,7 @@
                             <p class="text-sm pl-14 -mt-2">{{ $tweet->content }}</p>
                             @if ($tweet->image != null)
                                 <img src="{{ $tweet->image }}" alt=""
-                                class="pl-14 w-[585px] h-[270px] overflow-hidden my-2">
+                                class="pl-14 w-[585px] overflow-hidden my-2">
                             @endif
                         </div>
                         <div class="post-extra-options flex justify-start items-center gap-20 mt-4 pl-14">
@@ -160,7 +174,7 @@
                                 <img src="../images/like-fill.png" alt="" class="w-4 h-4 cursor-pointer hidden">
                                 <p>0</p>
                                 <p class="hidden"> {{ $tweet->id }}</p>
-                            </div>           
+                            </div>
                         </div>
                         <div class="comment-section hidden">
                             <input type="text" placeholder="comment here..."

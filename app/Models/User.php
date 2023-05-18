@@ -56,4 +56,17 @@ class User extends Authenticatable
     {
         return $this->hasMany(Like::class);
     }
+
+    public function canJoinRoom($roomId){
+        $granted = false;
+        $room = Room::findOrFail($roomId);
+        $users = explode(":", $room->users);
+        foreach ($users as $id){
+            if ($this->id == $id){
+                $granted = true;
+            }
+        }
+
+        return $granted;
+    }
 }

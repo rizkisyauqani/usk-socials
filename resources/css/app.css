@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .user-chat-active {
+        @apply px-3 flex items-center bg-gray-100 cursor-pointer;
+    }
+    .user-chat {
+        @apply bg-white px-3 flex items-center hover:bg-gray-50 cursor-pointer;
+    }
+
+}
