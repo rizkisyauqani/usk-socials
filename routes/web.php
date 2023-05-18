@@ -27,9 +27,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/login1', function () {
-    return view('login1');
-});
 
 Route::get('/register', function () {
     return view('register')->name('register');
@@ -40,15 +37,24 @@ Route::get('/homepage', function () {
 })->middleware(['auth'])->name('homepage');
 
 Route::get('/change-password', function () {
-    return view('change-password', ['title' => 'change password', 'user' => Auth::user()]);
+    return view('account.change-password', ['title' => 'change password', 'user' => Auth::user()]);
+});
+
+Route::get('/messages', function () {
+    return view();
 });
 
 Route::get('/preferences', function () {
-    return view('preferences', ['user' => Auth::user(), 'title' => 'preferences']);
+    return view('account.preferences', ['user' => Auth::user(), 'title' => 'preferences']);
+});
+
+
+Route::get('/detail', function () {
+    return view('detail');
 });
 
 Route::get('/dashboard-profile', function () {
-    return view('dashboard-profile', ['user' => Auth::user(), 'title' => 'dashboard profile']);
+    return view('account.dashboard-profile', ['user' => Auth::user(), 'title' => 'dashboard profile']);
 });
 
 Route::get('/profile', [UserController::class, 'index'])->name('profile');

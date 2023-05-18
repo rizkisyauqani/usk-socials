@@ -1,4 +1,4 @@
-@extends('custom-layouts.main-profile')
+@extends('account.main-profile')
 
 @section('content')
     <main class="absolute w-[1200px] left-[300px] h-[650px] delay-75 transition-all" id="mainProfile">

@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    @include('custom-components.navbar-profile')
+    @include('account.navbar-profile')
 
-    @include('custom-components.sidebar-profile')
+    @include('account.sidebar-profile')
 
     @yield('content')
 

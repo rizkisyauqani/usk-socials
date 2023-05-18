@@ -17,7 +17,7 @@ class UserController extends Controller
        $user = Auth::user();
 
        // mengirim data pegawai ke view index
-       return view('profile',['user' => $user, 'title' => 'profile']);
+       return view('account.profile',['user' => $user, 'title' => 'profile']);
 
    }
     
@@ -26,7 +26,7 @@ class UserController extends Controller
         $user = Auth::user();
 
        // mengirim data pegawai ke view index
-       return view('profile-delete', ['user' => $user, 'title' => 'delete account']);
+       return view('account.profile-delete', ['user' => $user, 'title' => 'delete account']);
 
    }
 

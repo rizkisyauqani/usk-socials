@@ -6,3 +6,7 @@
 .socmed-overlay.show {
     transform: scaleX(1);
 }
+
+#sidenav-5 {
+    width : 384px!important;
+}
