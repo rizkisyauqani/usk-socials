@@ -31,21 +31,35 @@ const cancelDeleteBtn = document.getElementById('cancelDelete');
 //     }   
 // })
 
-const navbar = document.querySelector('nav');
-const navbarColors = document.querySelectorAll('#colorContainer div')
+// localStorage.setItem('green', 'dark:bg-green-800')
 
-navbarColors[0].addEventListener('click', function () {
-    navbar.classList.toggle('dark:bg-green-800');
-})
+// const navbar = document.querySelector('nav');
 
-navbarColors[1].addEventListener('click', function () {
-    navbar.classList.toggle('dark:bg-blue-800');
-})
+// let colors = [];
 
-navbarColors[2].addEventListener('click', function () {
-    navbar.classList.toggle('dark:bg-stone-800');
-})
+// localStorage.setItem('color', JSON.stringify(colors));
 
-navbarColors[3].addEventListener('click', function () {
-    navbar.classList.toggle('dark:bg-red-800');
-})
+// let color = localStorage.getItem('color')
+
+// if (!color) {
+//     color = 'dark:bg-green-800'
+//     localStorage.setItem('color', color)
+// }
+
+// navbar.classList.toggle(color)
+
+// const navbarColors = document.querySelectorAll('#colorContainer div')
+
+
+// navbarColors[1].addEventListener('click', function () {
+//     navbar.classList.add('dark:bg-blue-800');
+// })
+
+// navbarColors[2].addEventListener('click', function () {
+//     navbar.classList.add('dark:bg-stone-800');
+// })
+
+// navbarColors[3].addEventListener('click', function () {
+//     navbar.classList.add('dark:bg-red-800');
+// })
+

@@ -1,4 +1,4 @@
-@extends('custom-layouts.main-profile')
+@extends('account.main-profile')
 
 @section('content')
     <main class="absolute w-[1200px] left-[300px] h-[650px] delay-75 transition-all" id="mainProfile">
@@ -19,13 +19,11 @@
                         name="username" value="">
                 </span>
         </div>
-        <div class="absolute bottom-8 right-14" id="formButtons">
+        <div class="absolute bottom-8 right-96" id="formButtons">
             <!-- Button trigger modal -->
             <span class="bg-green-400 text-white font-semibold py-1.5 px-6 rounded-2xl cursor-pointer"
                 data-te-toggle="modal" data-te-target="#exampleModal" data-te-ripple-init
                 data-te-ripple-color="light">save</span>
-            <span class="bg-red-400 text-white font-semibold py-1.5 px-4 rounded-2xl ml-3 cursor-pointer"
-                data-te-toggle="modal" data-te-target="#exampleModalCenter" data-te-ripple-init>cancel</span>
         </div>
         <!-- Modal -->
         <div data-te-modal-init

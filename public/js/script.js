@@ -1,41 +1,36 @@
-//sidebar
-const dropdownBtn = document.querySelector(".dropdown-btn");
-const dropdownContainer = document.querySelector(".dropdown-container");
+// //sidebar
+// const dropdownBtn = document.querySelector(".dropdown-btn");
+// const dropdownContainer = document.querySelector(".dropdown-container");
 
-dropdownBtn.addEventListener("click", function () {
-    dropdownContainer.classList.toggle("hidden");
-});
+// dropdownBtn.addEventListener("click", function () {
+//     dropdownContainer.classList.toggle("hidden");
+// });
 
 //main-content
 const tweetBox = document.querySelector("textarea");
-const textAlignBtn = document.querySelectorAll(".extra-options-content img");
+// const textAlignBtn = document.querySelectorAll(".extra-options-content img");
 const likeBtns = document.querySelectorAll(".like-container img");
 const likeNumber = document.querySelector(".like-container p");
 
-textAlignBtn[2].addEventListener("click", function () {
-    if (tweetBox.classList.contains("text-left")) {
-        tweetBox.classList.remove("text-left");
-        tweetBox.classList.add("text-center");
-        tweetBox.focus();
-    } else if (tweetBox.classList.contains("text-center")) {
-        tweetBox.classList.remove("text-center");
-        tweetBox.classList.add("text-right");
-        tweetBox.focus();
-    } else if (tweetBox.classList.contains("text-right")) {
-        tweetBox.classList.remove("text-right");
-        tweetBox.classList.add("text-left");
-        tweetBox.focus();
-    }
-});
+// textAlignBtn[2].addEventListener("click", function () {
+//     if (tweetBox.classList.contains("text-left")) {
+//         tweetBox.classList.remove("text-left");
+//         tweetBox.classList.add("text-center");
+//         tweetBox.focus();
+//     } else if (tweetBox.classList.contains("text-center")) {
+//         tweetBox.classList.remove("text-center");
+//         tweetBox.classList.add("text-right");
+//         tweetBox.focus();
+//     } else if (tweetBox.classList.contains("text-right")) {
+//         tweetBox.classList.remove("text-right");
+//         tweetBox.classList.add("text-left");
+//         tweetBox.focus();
+//     }
+// });
 
 let number = "";
 
 likeBtns[0].addEventListener("click", function () {
-    if (number === "") {
-        likeNumber.innerHTML = 1;
-    }
-
-    likeNumber.classList.remove("scale-x-0");
 
     if (
         !likeBtns[0].classList.contains("hidden") &&
@@ -47,11 +42,6 @@ likeBtns[0].addEventListener("click", function () {
 });
 
 likeBtns[1].addEventListener("click", function () {
-    if (number === 1) {
-        likeNumber.innerHTML = "";
-    }
-
-    likeNumber.classList.add("scale-x-0");
 
     if (
         likeBtns[0].classList.contains("hidden") &&
@@ -63,86 +53,86 @@ likeBtns[1].addEventListener("click", function () {
 });
 
 //gifs
-const gifSelectorIcon = document.getElementById("gifSelectorIcon");
-const gifSelector = document.getElementById("gifSelector");
-const gifSearch = document.getElementById("gifSearch");
-const gifList = document.getElementById("gifList");
+// const gifSelectorIcon = document.getElementById("gifSelectorIcon");
+// const gifSelector = document.getElementById("gifSelector");
+// const gifSearch = document.getElementById("gifSearch");
+// const gifList = document.getElementById("gifList");
 
-gifSelectorIcon.addEventListener("click", function () {
-    if (gifSelector.classList.contains("w-0", "h-0")) {
-        gifSelector.classList.remove("w-0", "h-0");
-        gifSelector.classList.add("w-60", "h-40");
-        if (emojiSelector.classList.contains("w-52", "h-40")) {
-            emojiSelector.classList.remove("w-52", "h-40");
-            emojiSelector.classList.add("w-0", "h-0");
-        }
-    } else if (gifSelector.classList.contains("w-60", "h-40")) {
-        gifSelector.classList.remove("w-60", "h-40");
-        gifSelector.classList.add("w-0", "h-0");
-    }
-});
+// gifSelectorIcon.addEventListener("click", function () {
+//     if (gifSelector.classList.contains("w-0", "h-0")) {
+//         gifSelector.classList.remove("w-0", "h-0");
+//         gifSelector.classList.add("w-60", "h-40");
+//         if (emojiSelector.classList.contains("w-52", "h-40")) {
+//             emojiSelector.classList.remove("w-52", "h-40");
+//             emojiSelector.classList.add("w-0", "h-0");
+//         }
+//     } else if (gifSelector.classList.contains("w-60", "h-40")) {
+//         gifSelector.classList.remove("w-60", "h-40");
+//         gifSelector.classList.add("w-0", "h-0");
+//     }
+// });
 
-let searchBtn = document.getElementById("searchBtn");
+// let searchBtn = document.getElementById("searchBtn");
 
-function randomGif() {
-    fetch(
-        "https://api.giphy.com/v1/gifs/trending?api_key=Jl6V3BK5DdRXU1kWErXfSGnOYMnudIW2&limit=25&rating=g"
-    )
-        .then((res) => res.json())
-        .then((data) => {
-            gifsRandom = data.data;
-            gifsRandom.forEach((gif) => {
-                let img = document.createElement("img");
-                img.setAttribute("src", gif.images.original.url);
-                img.style.width = "50px";
-                img.onload = function () {
-                    gifList.style.display = "flex";
-                };
-                gifList.append(img);
-                gifSelector.append(gifList);
-            });
-        });
-}
+// function randomGif() {
+//     fetch(
+//         "https://api.giphy.com/v1/gifs/trending?api_key=Jl6V3BK5DdRXU1kWErXfSGnOYMnudIW2&limit=25&rating=g"
+//     )
+//         .then((res) => res.json())
+//         .then((data) => {
+//             gifsRandom = data.data;
+//             gifsRandom.forEach((gif) => {
+//                 let img = document.createElement("img");
+//                 img.setAttribute("src", gif.images.original.url);
+//                 img.style.width = "50px";
+//                 img.onload = function () {
+//                     gifList.style.display = "flex";
+//                 };
+//                 gifList.append(img);
+//                 gifSelector.append(gifList);
+//             });
+//         });
+// }
 
-function generateGif() {
-    // let apiKey = ''
-    let q = gifSearch.value;
-    let amountOfGifs = 10;
-    // let url = `https://api.giphy.com/v1/search?api_key=${apiKey}&q=${q}&limit=${amountOfGifs}&offset=0&rating=g&lang=en`
+// function generateGif() {
+//     // let apiKey = ''
+//     let q = gifSearch.value;
+//     let amountOfGifs = 10;
+//     // let url = `https://api.giphy.com/v1/search?api_key=${apiKey}&q=${q}&limit=${amountOfGifs}&offset=0&rating=g&lang=en`
 
-    fetch(
-        `https://api.giphy.com/v1/gifs/search?api_key=Jl6V3BK5DdRXU1kWErXfSGnOYMnudIW2&q=${q}&limit=${amountOfGifs}&offset=0&rating=g&lang=en`
-    )
-        .then((res) => res.json())
-        .then((giphy) => {
-            let gifsData = giphy.data;
-            //   console.log(gifsData);
-            gifsData.forEach((gif) => {
-                let img = document.createElement("img");
-                img.setAttribute("src", gif.images.downsized_medium.url);
-                img.style.width = "50px";
-                img.onload = function () {
-                    amountOfGifs--;
-                    if (amountOfGifs === 0) {
-                        gifList.style.display = "flex";
-                    }
-                };
+//     fetch(
+//         `https://api.giphy.com/v1/gifs/search?api_key=Jl6V3BK5DdRXU1kWErXfSGnOYMnudIW2&q=${q}&limit=${amountOfGifs}&offset=0&rating=g&lang=en`
+//     )
+//         .then((res) => res.json())
+//         .then((giphy) => {
+//             let gifsData = giphy.data;
+//             //   console.log(gifsData);
+//             gifsData.forEach((gif) => {
+//                 let img = document.createElement("img");
+//                 img.setAttribute("src", gif.images.downsized_medium.url);
+//                 img.style.width = "50px";
+//                 img.onload = function () {
+//                     amountOfGifs--;
+//                     if (amountOfGifs === 0) {
+//                         gifList.style.display = "flex";
+//                     }
+//                 };
 
-                gifList.append(img);
-                gifSelector.append(gifList);
-            });
-        });
-}
+//                 gifList.append(img);
+//                 gifSelector.append(gifList);
+//             });
+//         });
+// }
 
-// gifSearch.addEventListener('input', generateGif)
-window.onload = randomGif;
-// window.addEventListener('load', generateGif)
-searchBtn.addEventListener("click", function () {
-    if (gifSelector !== null) {
-        window.onload = gifSelector.append('')
-        generateGif()
-    }
-});
+// // gifSearch.addEventListener('input', generateGif)
+// window.onload = randomGif;
+// // window.addEventListener('load', generateGif)
+// searchBtn.addEventListener("click", function () {
+//     if (gifSelector !== null) {
+//         window.onload = gifSelector.append('')
+//         generateGif()
+//     }
+// });
 
 //emojis
 const emojiSelectorIcon = document.getElementById("emojiSelectorIcon");
@@ -228,10 +218,6 @@ document.onclick = function () {
         } 
 }
 
-//close gifList by clicking outside gifList element
-// document.addEventListener("click", function (e) {
-//     if 
-// });
 
 //comment section
 const commentBtn = document.querySelector('.comment-container img')
@@ -264,10 +250,10 @@ bodyOverlay.addEventListener('click', function () {
     socmedOverlay.classList.remove('show')
 })
 
-shareBtn.addEventListener('click', function () {
-    bodyOverlay.classList.toggle('show')
-    socmedOverlay.classList.toggle('show')
-})
+// shareBtn.addEventListener('click', function () {
+//     bodyOverlay.classList.toggle('show')
+//     socmedOverlay.classList.toggle('show')
+// })
 
 closeSocmedOverlayBtn.addEventListener('click', function () {
     bodyOverlay.classList.remove('show')
@@ -302,47 +288,47 @@ init();
 //aside content
 
 //search
-const globalSearch = document.getElementById("globalSearch");
-const searchIcon = document.getElementById("searchIcon");
-const closeIcon = document.getElementById("closeIcon");
-const sideContent = document.getElementById("sideContent");
-const searchContainer = document.getElementById("searchContainer");
+// const globalSearch = document.getElementById("globalSearch");
+// const searchIcon = document.getElementById("searchIcon");
+// const closeIcon = document.getElementById("closeIcon");
+// const sideContent = document.getElementById("sideContent");
+// const searchContainer = document.getElementById("searchContainer");
 
-globalSearch.addEventListener("click", function () {
-    if (
-        !searchIcon.classList.contains("hidden") &&
-        closeIcon.classList.contains("hidden")
-    ) {
-        searchIcon.classList.add("hidden");
-        closeIcon.classList.remove("hidden");
-    }
-});
+// globalSearch.addEventListener("click", function () {
+//     if (
+//         !searchIcon.classList.contains("hidden") &&
+//         closeIcon.classList.contains("hidden")
+//     ) {
+//         searchIcon.classList.add("hidden");
+//         closeIcon.classList.remove("hidden");
+//     }
+// });
 
-searchIcon.addEventListener("click", function () {
-    searchIcon.classList.add("hidden");
-    closeIcon.classList.remove("hidden");
-    globalSearch.classList.remove("scale-x-0");
-    globalSearch.classList.add("scale-x-100");
-    globalSearch.focus();
-});
+// searchIcon.addEventListener("click", function () {
+//     searchIcon.classList.add("hidden");
+//     closeIcon.classList.remove("hidden");
+//     globalSearch.classList.remove("scale-x-0");
+//     globalSearch.classList.add("scale-x-100");
+//     globalSearch.focus();
+// });
 
-closeIcon.addEventListener("click", function () {
-    searchIcon.classList.remove("hidden");
-    closeIcon.classList.add("hidden");
-    globalSearch.classList.remove("scale-x-100");
-    globalSearch.classList.add("scale-x-0");
-    globalSearch.value = "";
-});
+// closeIcon.addEventListener("click", function () {
+//     searchIcon.classList.remove("hidden");
+//     closeIcon.classList.add("hidden");
+//     globalSearch.classList.remove("scale-x-100");
+//     globalSearch.classList.add("scale-x-0");
+//     globalSearch.value = "";
+// });
 
-document.addEventListener("click", function (e) {
-    if (!searchContainer.contains(e.target)) {
-        searchIcon.classList.remove("hidden");
-        closeIcon.classList.add("hidden");
-        globalSearch.classList.remove("scale-x-100");
-        globalSearch.classList.add("scale-x-0");
-        globalSearch.value = "";
-    }
-});
+// document.addEventListener("click", function (e) {
+//     if (!searchContainer.contains(e.target)) {
+//         searchIcon.classList.remove("hidden");
+//         closeIcon.classList.add("hidden");
+//         globalSearch.classList.remove("scale-x-100");
+//         globalSearch.classList.add("scale-x-0");
+//         globalSearch.value = "";
+//     }
+// });
 
 
 

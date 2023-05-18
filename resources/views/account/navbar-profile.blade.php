@@ -21,7 +21,8 @@
         <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto z-50"
             id="navbarSupportedContent1" data-te-collapse-item>
             <!-- Logo -->
-            <a class=" mb-4 mr-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
+            <a href="{{ route('homepage') }}"
+                class=" mb-4 mr-2 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
                 href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                     class="bi bi-arrow-left-short md:hidden lg:inline" viewBox="0 0 16 16">
@@ -29,8 +30,6 @@
                         d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"
                         loading="lazy" />
                 </svg>
-                {{-- <img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" style="height: 15px"
-                        alt=""  /> --}}
             </a>
             <!-- Left navigation links -->
         </div>
@@ -73,7 +72,7 @@
                     <!-- Second dropdown menu items -->
                     <li>
                         <a class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
-                            href="#" data-te-dropdown-item-ref>Action</a>
+                            href="#" data-te-dropdown-item-ref>Logout</a>
                     </li>
                 </ul>
             </div>
