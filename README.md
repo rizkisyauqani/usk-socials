@@ -84,8 +84,8 @@ Start the server
 
 **Server:** Node, Artisan
 
+## Note
 
-
-
-
-
+```
+    If you are in main branch please switch to usk branch before clone the app
+```
