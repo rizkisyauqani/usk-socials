@@ -51,13 +51,13 @@ How to use the app?
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://link-to-project](https://github.com/rizkisyauqani/usk-socials.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd usk-socials
 ```
 
 Install dependencies
