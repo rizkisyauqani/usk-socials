@@ -41,4 +41,32 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tweets()
+    {
+        return $this->hasMany(Tweet::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function canJoinRoom($roomId){
+        $granted = false;
+        $room = Room::findOrFail($roomId);
+        $users = explode(":", $room->users);
+        foreach ($users as $id){
+            if ($this->id == $id){
+                $granted = true;
+            }
+        }
+
+        return $granted;
+    }
 }

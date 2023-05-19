@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -34,17 +35,26 @@ class UserController extends Controller
     {
         $user = User::find(Auth::user()->id);
         $user->name = $request->name;
-        $user->username = $request->username;
+        $user->email = $request->email;
         $user->hp = $request->hp;
         $user->address = $request->address;
         if ($request->hasFile('image')){
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension();
             $filename = time(). '.' . $extension;
-            $file->move('images', $filename);
+            $file->move('images/', $filename);
             $user->image =  '/images/' .$filename;
         }
 
+        $user->save();
+
+        return redirect()->route('profile');
+    }
+
+    public function changePassword(Request $request) 
+    {
+        $user = User::find(Auth::user()->id);
+        $user->password = Hash::make($request->password);
         $user->save();
 
         return redirect()->route('profile');

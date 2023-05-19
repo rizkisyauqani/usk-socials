@@ -3,20 +3,20 @@
 @section('content')
     <main class="absolute w-[1200px] left-[300px] h-[650px] delay-75 transition-all" id="mainProfile">
         <div class="pl-24 pt-8">
-            <form action="" method="POST">
+            <form action="{{ route('password-change') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <span class="flex items-center mb-7 ">
                     <label class="font-semibold w-32">New Password</label>
                     <p class="font-semibold text-xl ml-60 mr-4">:</p>
-                    <input type="text" class="text-sm w-80 mt-1 px-2 py-[6px] bg-slate-200 rounded-md focus:outline-none"
-                        value="" name="name">
+                    <input type="password" class="text-sm w-80 mt-1 px-2 py-[6px] bg-slate-200 rounded-md focus:outline-none"
+                        value="" name="password">
                 </span>
                 <span class="flex items-center mb-7">
                     <label class="font-semibold w-32">Confirm New Password</label>
                     <p class="font-semibold text-xl ml-60 mr-4">:</p>
-                    <input type="text" class="text-sm w-80 mt-1 px-2 py-[6px] bg-slate-200 rounded-md focus:outline-none"
-                        name="username" value="">
+                    <input type="password" class="text-sm w-80 mt-1 px-2 py-[6px] bg-slate-200 rounded-md focus:outline-none"
+                        name="password" value="">
                 </span>
         </div>
         <div class="absolute bottom-8 right-96" id="formButtons">
